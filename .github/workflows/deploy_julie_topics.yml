@@ -46,6 +46,10 @@ jobs:
           brokers: broker:29092
           clientConfig: config/julieClient.config
           topology: myKafkaTopics.yml
+      - name: Show running docker containers
+        run: docker ps -a
+      - name: Show kafka logs
+        run: docker logs broker
       - name: Check kafka's topics
         run: docker exec broker kafka-topics --bootstrap-server localhost:9092 --list
       - name: Describe the foo topic
