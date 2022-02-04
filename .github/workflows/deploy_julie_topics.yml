@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Execute Julie action
         id: julie
-        uses: marcelboldt/gitops_julie-apply@v1
+        uses: marcelboldt/gitops_julie-apply@v0.9
         with:
           brokers: broker:29092
           clientConfig: config/julieClient.config
