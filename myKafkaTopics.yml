@@ -1,0 +1,19 @@
+context: "context"
+source: "source"
+projects:
+- name: "foo"
+  topics:
+  - name: "foo" # topicName: context.source.foo.foo
+    config:
+      replication.factor: "2"
+      num.partitions: "3"
+  - name: "bar" # topicName: context.source.foo.bar
+    config:
+      replication.factor: "2"
+      num.partitions: "3"
+- name: "bar"
+  topics:
+  - name: "bar" # topicName: context.source.bar.bar
+    config:
+      replication.factor: "2"
+      num.partitions: "3"
