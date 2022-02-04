@@ -1,4 +1,4 @@
-name: Integration tests
+name: Deploy JulieOps topology
 on: push
 jobs:
   Test-julie-topoology:
