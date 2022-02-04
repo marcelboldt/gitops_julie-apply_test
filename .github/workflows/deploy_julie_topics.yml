@@ -43,10 +43,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Show running docker containers
         run: docker ps -a
-      - name: Show kafka logs
-        run: docker logs broker
-      - name: Check kafka's topics
-        run: docker exec broker kafka-topics --bootstrap-server localhost:9092 --list
       - name: Apply JulieOps topology
         id: julie
         uses: marcelboldt/gitops_julie-apply@v0.9
@@ -54,5 +50,9 @@ jobs:
           brokers: broker:29092
           clientConfig: config/julieClient.config
           topology: myKafkaTopics.yml
+      - name: Show kafka logs
+        run: docker logs broker
+      - name: Check kafka's topics
+        run: docker exec broker kafka-topics --bootstrap-server localhost:9092 --list
       - name: Describe the foo topic
         run: docker exec broker kafka-topics --bootstrap-server localhost:9092 --describe --topic context.source.foo.foo
