@@ -3,7 +3,7 @@ source: "source"
 projects:
 - name: "foo"
   topics:
-  - name: "foo" # topicName: context.source.foo.foo
+  - name: "hallo" # topicName: context.source.foo.foo
     config:
       replication.factor: "1"
       num.partitions: "1"
